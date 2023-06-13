@@ -64,10 +64,13 @@ public class ElevatorController {
         if(decideToMoveUpOrDown(elevator).equals(ElevatorGoingStatus.DOWN)){
             System.out.println("elevator is going Down ");
             elevatorGoingDown(elevator);
-        }else {
+        } else if (decideToMoveUpOrDown(elevator).equals(ElevatorGoingStatus.UP)){
             System.out.println("Elevator is going Up ");
             elevatorGoingUp(elevator);
         }
+
+
+
 
     }
 

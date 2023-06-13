@@ -1,6 +1,7 @@
 package com.example.elevatordesign;
 
 import com.example.elevatordesign.Model.Elevator;
+import com.example.elevatordesign.Model.ElevatorGoingStatus;
 import com.example.elevatordesign.Model.ElevatorStatus;
 import com.example.elevatordesign.controller.DoorController;
 import com.example.elevatordesign.controller.ElevatorController;
@@ -52,6 +53,9 @@ public class ElevatorDesignApplication implements CommandLineRunner {
             while(elevator.getFront()<=elevator.getRear()){
                 eelevatorController.movingUpOrDown(elevator);
                 userInputsController.createUserInputs(requestDto, elevator);
+            }
+            if(elevator.getElevatorGoingStatus().equals(ElevatorGoingStatus.STILL)){
+                System.out.println("Elevator is at " + elevator.getAtFloorNumber() + " floor number");
             }
         }
     }
